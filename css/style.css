@@ -115,6 +115,64 @@ ul li {
     display: none !important;
 }
 
+
+/* ----------------------- loader ---------------------------  */
+
+/* .pre_loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    z-index: 2000;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ok_loader {
+    position: relative;
+}
+
+.ok_loader span {
+    position: absolute;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    font-size: 38px;
+    letter-spacing: 5px;
+}
+
+.ok_loader span:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 0.3px rgb(128, 198, 255);
+}
+
+.ok_loader span:nth-child(2) {
+    color: rgb(128, 198, 255);
+    -webkit-text-stroke: 1px rgb(128, 198, 255);
+    animation: load 3s ease-in-out infinite;
+}
+
+@keyframes load {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%, 15% 44%, 32% 50%,
+                54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%, 16% 65%, 34% 66%,
+                51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+    }
+} */
+
+
+
+
 /* header ==================================================
 ------------------------------------------------------------ */
 
@@ -255,11 +313,11 @@ nav ul li a:hover::after {
     width: 75%;
 }
 
-nav ul .drop{
+nav ul .drop {
     position: relative;
 }
 
-nav ul .drop .douwn{
+nav ul .drop .douwn {
     position: absolute;
     display: block;
     width: 170px;
@@ -273,13 +331,16 @@ nav ul .drop .douwn{
     opacity: 0;
     transition: .4s;
 }
-nav ul .drop .douwn li{
+
+nav ul .drop .douwn li {
     line-height: 2;
 }
-nav ul .drop .douwn li a{
+
+nav ul .drop .douwn li a {
     margin: 0;
 }
-nav ul .drop:hover .douwn{
+
+nav ul .drop:hover .douwn {
     visibility: visible;
     opacity: 1;
     height: 150px;
@@ -316,6 +377,7 @@ swiper-slide {
     -webkit-text-stroke: 1px #fff;
     background-image: url('../img/back.png');
     -webkit-background-clip: text;
+    background-clip: text;
     background-position: 0 0;
     animation: back 20s linear infinite;
 }
@@ -1066,6 +1128,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 50px 0;
+    overflow: hidden;
 }
 
 .social-sharing .col-3 {
@@ -1551,6 +1614,10 @@ footer .footer-2 .footer-list li a:hover {
     /* main-banner====================================
     ------------------------------------------------ */
 
+    swiper-container {
+        height: 60vh;
+    }
+
     .banner-content h1 {
         font-size: 70px;
         line-height: 70px;
@@ -1712,13 +1779,17 @@ footer .footer-2 .footer-list li a:hover {
     /* main-banner====================================
     ------------------------------------------------ */
 
+    swiper-container {
+        height: 40vh;
+    }
+
     .banner-content h1 {
-        font-size: 70px;
-        line-height: 70px;
+        font-size: 50px;
+        line-height: 55px;
     }
 
     .banner-content h3 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .banner-btn a {
@@ -1949,9 +2020,11 @@ footer .footer-2 .footer-list li a:hover {
     }
 }
 
-@media (max-width:575px) {
+@media (min-width:425px) and (max-width: 575px) {
     .container {
-        width: 540px;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
         margin: auto;
     }
 
@@ -1968,30 +2041,38 @@ footer .footer-2 .footer-list li a:hover {
         width: 70%;
     }
 
-    header nav ul li a {
+    header nav {
+        display: none;
+    }
+
+    /* header nav ul li a {
         font-size: 14px;
         margin-left: 15px;
-    }
+    } */
 
     /* main-banner====================================
     ------------------------------------------------ */
 
+    swiper-container {
+        height: 40vh;
+    }
+
     .banner-content h1 {
-        font-size: 70px;
-        line-height: 70px;
+        font-size: 45px;
+        line-height: 55px;
     }
 
     .banner-content h3 {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     .banner-btn a {
-        width: 8em;
+        width: 7em;
         height: 2em;
     }
 
     .banner-btn {
-        width: 12.6em;
+        width: 11em;
         height: 3.6em;
     }
 
@@ -2007,11 +2088,48 @@ footer .footer-2 .footer-list li a:hover {
         padding: 12px;
     }
 
+    .upcoming-events .upcoming-title h2 {
+        font-size: 30px;
+    }
+
+    .upcoming-events .upcoming-title span {
+        font-size: 18px;
+    }
+
+    .upcoming-events .upcoming-title {
+        margin-bottom: 20px;
+    }
+
+    .upcoming-events .event-box {
+        height: 250px;
+    }
+
     /* BIOGRAPHY ==============================================
     ============================================================ */
 
     .biography-area .biography-img .biography-content .p_ {
         display: none;
+    }
+
+    .biography-area .biography-img .biography-content span {
+        font-size: 24px;
+    }
+
+    .biography-area .biography-img .biography-content h2 {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .biography-area .biography-img .biography-content p {
+        font-size: 16px;
+    }
+
+    .conter-box h4 ul li {
+        font-size: 22px;
+    }
+
+    .conter-box h5 {
+        font-size: 14px;
     }
 
     /* music-list =============================================
@@ -2027,12 +2145,26 @@ footer .footer-2 .footer-list li a:hover {
         width: 100%;
     }
 
+    .music-list .list-box .music-name a {
+        font-size: 14px;
+    }
+
+    .music-list .list-box .music-price span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .music-list .list-box .music-price a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
     /* RECENT NEWS ============================================
     ----------------------------------------------------------- */
 
     .news-area .col-4 {
         padding: 15px 12px;
-        width: 100% ;
+        width: 100%;
     }
 
     /* VIDEO CONCERT ==========================================================
@@ -2044,18 +2176,54 @@ footer .footer-2 .footer-list li a:hover {
     }
 
     .video-area .video-title {
-        font-size: 30px;
+        font-size: 26px;
     }
 
     .video-area .yt-video iframe {
         height: 250px;
     }
 
+    .video-area .video-content h3 {
+        font-size: 24px;
+    }
+
+    .video-area .video-content span {
+        font-size: 14px;
+    }
+
+    .video-area .video-content p {
+        margin: 15px 0px;
+        font-size: 16px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name h4 {
+        font-size: 12px;
+        line-height: 0;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name span {
+        font-size: 10px;
+    }
+
+    .video-area .video-content .video-slid .video-head a {
+        font-size: 20px;
+    }
+
+    .video-area .video-content .video-slid .video-foot p {
+        font-size: 14px;
+    }
+
+
     /* countdown-area =========================================
     -------------------------------------------------------------- */
 
     .countdown-area .countdown-title {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     #days {
@@ -2082,11 +2250,11 @@ footer .footer-2 .footer-list li a:hover {
     }
 
     .social-sharing .sharing-title {
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .cardContainer {
-        height: 200px;
+        height: 150px;
     }
 
     .infoDiv a {
@@ -2094,7 +2262,7 @@ footer .footer-2 .footer-list li a:hover {
     }
 
     .socialDiv {
-        width: 15% ;
+        width: 15%;
     }
 
     .nameDiv {
@@ -2110,22 +2278,42 @@ footer .footer-2 .footer-list li a:hover {
     }
 
     .cardContainer:hover .profileDiv {
-        transform: translateX(-13%) translateY(-20%);
+        transform: translateX(-13%) translateY(-26%);
     }
 
     /* people-review ================================================================
     ======================================================================================  */
 
     .review-area .people-title h2 {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .review-area .people-review .people-foot p {
+        font-size: 12px;
+    }
+
+    .review-area .people-review .people-profile {
+        padding: 10px;
+    }
+
+    .review-area .people-review .people-profile h5 {
         font-size: 15px;
+    }
+
+    .review-area .people-review .people-profile span {
+        font-size: 12px;
     }
 
     /* footer =================================================================
     ========================================================================= */
+
+    footer .col-6 {
+        width: 100%;
+    }
+
+    footer .footer-1 {
+        margin-bottom: 30px;
+    }
 
     footer .footer-1 img {
         width: 50%;
@@ -2152,7 +2340,753 @@ footer .footer-2 .footer-list li a:hover {
     }
 
     footer .col-4:last-child {
-        display: none ;
+        display: none;
+    }
+
+    footer .col-4 {
+        width: 49.99%;
+    }
+}
+
+@media (min-width:320px) and (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: auto;
+    }
+
+    header .head-icon ul li a {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    header .logo {
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .logo img {
+        width: 70%;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    /* header nav ul li a {
+        font-size: 14px;
+        margin-left: 15px;
+    } */
+
+    /* main-banner====================================
+    ------------------------------------------------ */
+
+    swiper-container {
+        height: 50vh;
+    }
+
+    .banner-content h1 {
+        font-size: 40px;
+        line-height: 42px;
+    }
+
+    .banner-content h3 {
+        font-size: 14px;
+    }
+
+    .banner-btn a {
+        width: 7em;
+        height: 2em;
+    }
+
+    .banner-btn {
+        width: 11em;
+        height: 3.6em;
+    }
+
+    swiper-slide {
+        background-position: center;
+    }
+
+    /* Upcoming Events================================================
+    -------------------------------------------------------------------- */
+
+    .upcoming-events .col-3 {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .upcoming-events .upcoming-title h2 {
+        font-size: 24px;
+    }
+
+    .upcoming-events .upcoming-title span {
+        font-size: 15px;
+    }
+
+    .upcoming-events .upcoming-title {
+        margin-bottom: 20px;
+    }
+
+    .upcoming-events .event-box {
+        height: 250px;
+        padding: 20px 20px;
+    }
+
+
+
+    /* BIOGRAPHY ==============================================
+    ============================================================ */
+
+    .biography-area .biography-img .biography-content .p_ {
+        display: none;
+    }
+
+    .biography-area .biography-img {
+        padding: 20px;
+    }
+
+    .biography-area .biography-img .biography-content span {
+        font-size: 22px;
+    }
+
+    .biography-area .biography-img .biography-content h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .biography-area .biography-img .biography-content p {
+        font-size: 12px;
+    }
+
+    .conter-box h4 ul li {
+        font-size: 18px;
+    }
+
+    .conter-box h5 {
+        font-size: 12px;
+    }
+
+    /* music-list =============================================
+    ============================================================== */
+
+    .music-area .col-5 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .music-area .col-7 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .spotify {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-area .main {
+        padding: 10px;
+    }
+
+    .heading {
+        font-size: 1em;
+    }
+
+    .music-list .list-box {
+        flex-wrap: wrap;
+    }
+
+    .music-list .list-box .music-name a {
+        font-size: 14px;
+    }
+
+    .music-list .list-box .music-price span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .music-list .list-box .music-price a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    /* RECENT NEWS ============================================
+    ----------------------------------------------------------- */
+
+    .news-area .col-4 {
+        padding: 15px 12px;
+        width: 100%;
+    }
+
+    .news-area .news-title h2 {
+        font-size: 30px;
+    }
+
+    .news-area .news-box {
+        padding: 15px;
+        min-height: 300px;
+    }
+
+    .news-area .news-box .news-content h3 {
+        font-size: 22px;
+    }
+
+    /* VIDEO CONCERT ==========================================================
+    ---------------------------------------------------------------------------- */
+
+    .video-area .col-6 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .video-area .video-title {
+        font-size: 22px;
+    }
+
+    .video-area .yt-video iframe {
+        height: 200px;
+    }
+
+    .video-area .video-content {
+        height: 330px;
+    }
+
+    .video-area .video-content h3 {
+        font-size: 20px;
+    }
+
+    .video-area .video-content span {
+        font-size: 10px;
+        margin-right: 5px;
+    }
+
+    .video-area .video-content p {
+        margin: 12px 0px;
+        font-size: 14px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name h4 {
+        font-size: 12px;
+        line-height: 0;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name span {
+        font-size: 10px;
+    }
+
+    .video-area .video-content .video-slid .video-head a {
+        font-size: 20px;
+    }
+
+    .video-area .video-content .video-slid .video-foot p {
+        font-size: 12px;
+    }
+
+
+    /* countdown-area =========================================
+    -------------------------------------------------------------- */
+
+    .countdown-area .countdown-title {
+        font-size: 16px;
+    }
+
+    #days {
+        font-size: 55px;
+    }
+
+    #hours {
+        font-size: 55px;
+    }
+
+    #minutes {
+        font-size: 55px;
+    }
+
+    #seconds {
+        font-size: 26px;
+    }
+
+    /* Social Sharing ========================================================
+    ---------------------------------------------------------------------------- */
+
+    .social-sharing .col-3 {
+        width: 100%;
+    }
+
+    .social-sharing .sharing-title {
+        font-size: 18px;
+    }
+
+    .cardContainer {
+        height: 160px;
+    }
+
+    .infoDiv a {
+        font-size: 13px;
+    }
+
+    .socialDiv {
+        width: 15%;
+    }
+
+    .nameDiv {
+        width: 85%;
+    }
+
+    .social-name {
+        font-size: 13px;
+    }
+
+    .social-review {
+        font-size: 10px;
+    }
+
+    .cardContainer:hover .profileDiv {
+        transform: translateX(-10%) translateY(-26%);
+    }
+
+    /* people-review ================================================================
+    ======================================================================================  */
+
+    .review-area .people-title h2 {
+        font-size: 24px;
+    }
+
+    .review-area .people-review .people-foot p {
+        font-size: 12px;
+    }
+
+    .review-area .people-review .people-profile {
+        padding: 10px;
+    }
+
+    .review-area .people-review .people-profile h5 {
+        font-size: 15px;
+    }
+
+    .review-area .people-review .people-profile span {
+        font-size: 12px;
+    }
+
+    /* footer =================================================================
+    ========================================================================= */
+
+    footer .col-6 {
+        width: 100%;
+    }
+
+    footer .footer-1 {
+        margin-bottom: 30px;
+    }
+
+    footer .footer-1 img {
+        width: 50%;
+    }
+
+    footer .footer-1 p {
+        font-size: 15px;
+    }
+
+    footer .footer-1 span a {
+        font-size: 20px;
+    }
+
+    footer .footer-2 .footer-list h4 {
+        font-size: 18px;
+    }
+
+    footer .footer-2 .footer-list li {
+        line-height: 2;
+    }
+
+    footer .footer-2 .footer-list li a {
+        font-size: 15px;
+    }
+
+    footer .col-4:last-child {
+        display: none;
+    }
+
+    footer .col-4 {
+        width: 49.99%;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: auto;
+    }
+
+    header .head-icon ul li a {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    header .logo {
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .logo img {
+        width: 70%;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    /* header nav ul li a {
+        font-size: 14px;
+        margin-left: 15px;
+    } */
+
+    /* main-banner====================================
+    ------------------------------------------------ */
+
+    swiper-container {
+        height: 50vh;
+    }
+
+    .banner-content h1 {
+        font-size: 40px;
+        line-height: 42px;
+    }
+
+    .banner-content h3 {
+        font-size: 14px;
+    }
+
+    .banner-btn a {
+        width: 7em;
+        height: 2em;
+    }
+
+    .banner-btn {
+        width: 11em;
+        height: 3.6em;
+    }
+
+    swiper-slide {
+        background-position: center;
+    }
+
+    /* Upcoming Events================================================
+    -------------------------------------------------------------------- */
+
+    .upcoming-events .col-3 {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .upcoming-events .upcoming-title h2 {
+        font-size: 24px;
+    }
+
+    .upcoming-events .upcoming-title span {
+        font-size: 15px;
+    }
+
+    .upcoming-events .upcoming-title {
+        margin-bottom: 20px;
+    }
+
+    .upcoming-events .event-box {
+        height: 250px;
+        padding: 20px 20px;
+    }
+
+
+
+    /* BIOGRAPHY ==============================================
+    ============================================================ */
+
+    .biography-area .biography-img .biography-content .p_ {
+        display: none;
+    }
+
+    .biography-area .biography-img {
+        padding: 20px;
+    }
+
+    .biography-area .biography-img .biography-content span {
+        font-size: 22px;
+    }
+
+    .biography-area .biography-img .biography-content h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .biography-area .biography-img .biography-content p {
+        font-size: 12px;
+    }
+
+    .conter-box h4 ul li {
+        font-size: 18px;
+    }
+
+    .conter-box h5 {
+        font-size: 12px;
+    }
+
+    /* music-list =============================================
+    ============================================================== */
+
+    .music-area .col-5 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .music-area .col-7 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .spotify {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-area .main {
+        padding: 10px;
+    }
+
+    .heading {
+        font-size: 1em;
+    }
+
+    .music-list .list-box {
+        flex-wrap: wrap;
+    }
+
+    .music-list .list-box .music-name a {
+        font-size: 14px;
+    }
+
+    .music-list .list-box .music-price span {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    .music-list .list-box .music-price a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    /* RECENT NEWS ============================================
+    ----------------------------------------------------------- */
+
+    .news-area .col-4 {
+        padding: 15px 12px;
+        width: 100%;
+    }
+
+    .news-area .news-title h2 {
+        font-size: 30px;
+    }
+
+    .news-area .news-box {
+        padding: 15px;
+        min-height: 300px;
+    }
+
+    .news-area .news-box .news-content h3 {
+        font-size: 22px;
+    }
+
+    /* VIDEO CONCERT ==========================================================
+    ---------------------------------------------------------------------------- */
+
+    .video-area .col-6 {
+        padding: 12px;
+        width: 100%;
+    }
+
+    .video-area .video-title {
+        font-size: 22px;
+    }
+
+    .video-area .yt-video iframe {
+        height: 200px;
+    }
+
+    .video-area .video-content {
+        height: 330px;
+    }
+
+    .video-area .video-content h3 {
+        font-size: 20px;
+    }
+
+    .video-area .video-content span {
+        font-size: 10px;
+        margin-right: 5px;
+    }
+
+    .video-area .video-content p {
+        margin: 12px 0px;
+        font-size: 14px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name h4 {
+        font-size: 12px;
+        line-height: 0;
+    }
+
+    .video-area .video-content .video-slid .video-head .user-profile .user-name span {
+        font-size: 10px;
+    }
+
+    .video-area .video-content .video-slid .video-head a {
+        font-size: 20px;
+    }
+
+    .video-area .video-content .video-slid .video-foot p {
+        font-size: 12px;
+    }
+
+
+    /* countdown-area =========================================
+    -------------------------------------------------------------- */
+
+    .countdown-area .countdown-title {
+        font-size: 16px;
+    }
+
+    #days {
+        font-size: 55px;
+    }
+
+    #hours {
+        font-size: 55px;
+    }
+
+    #minutes {
+        font-size: 55px;
+    }
+
+    #seconds {
+        font-size: 26px;
+    }
+
+    /* Social Sharing ========================================================
+    ---------------------------------------------------------------------------- */
+
+    .social-sharing .col-3 {
+        width: 100%;
+    }
+
+    .social-sharing .sharing-title {
+        font-size: 18px;
+    }
+
+    .cardContainer {
+        height: 160px;
+    }
+
+    .infoDiv a {
+        font-size: 13px;
+    }
+
+    .socialDiv {
+        width: 15%;
+    }
+
+    .nameDiv {
+        width: 85%;
+    }
+
+    .social-name {
+        font-size: 13px;
+    }
+
+    .social-review {
+        font-size: 10px;
+    }
+
+    .cardContainer:hover .profileDiv {
+        transform: translateX(-10%) translateY(-26%);
+    }
+
+    /* people-review ================================================================
+    ======================================================================================  */
+
+    .review-area .people-title h2 {
+        font-size: 24px;
+    }
+
+    .review-area .people-review .people-foot p {
+        font-size: 12px;
+    }
+
+    .review-area .people-review .people-profile {
+        padding: 10px;
+    }
+
+    .review-area .people-review .people-profile h5 {
+        font-size: 15px;
+    }
+
+    .review-area .people-review .people-profile span {
+        font-size: 12px;
+    }
+
+    /* footer =================================================================
+    ========================================================================= */
+
+    footer .col-6 {
+        width: 100%;
+    }
+
+    footer .footer-1 {
+        margin-bottom: 30px;
+    }
+
+    footer .footer-1 img {
+        width: 50%;
+    }
+
+    footer .footer-1 p {
+        font-size: 15px;
+    }
+
+    footer .footer-1 span a {
+        font-size: 20px;
+    }
+
+    footer .footer-2 .footer-list h4 {
+        font-size: 18px;
+    }
+
+    footer .footer-2 .footer-list li {
+        line-height: 2;
+    }
+
+    footer .footer-2 .footer-list li a {
+        font-size: 15px;
+    }
+
+    footer .col-4:last-child {
+        display: none;
     }
 
     footer .col-4 {
